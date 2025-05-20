@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: lyrion-music-server
+  annotations:
+    kubernetes.io/ingress.class: internal
+spec:
+  rules:
+    - host: "lms.${SECRET_DOMAIN}"
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: lyrion-music-server
+                port:
+                  number: 9000
