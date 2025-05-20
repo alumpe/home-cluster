@@ -29,19 +29,19 @@ spec:
           env:
             - name: HTTP_PORT
               value: "9000"
-          volumeMounts:
-            - name: localtime
-              mountPath: /etc/localtime
-              readOnly: true
-            - name: timezone
-              mountPath: /etc/timezone
-              readOnly: true
-      volumes:
-        - name: localtime
-          hostPath:
-            path: /etc/localtime
-            type: File
-        - name: timezone
-          hostPath:
-            path: /etc/timezone
-            type: File
+          # volumeMounts:
+          #   - name: localtime
+          #     mountPath: /etc/localtime
+          #     readOnly: true
+          #   - name: timezone
+          #     mountPath: /etc/timezone
+          #     readOnly: true
+      # volumes:
+      #   - name: localtime
+      #     hostPath:
+      #       path: /etc/localtime
+      #       type: File
+      #   - name: timezone
+      #     hostPath:
+      #       path: /etc/timezone
+      #       type: File
