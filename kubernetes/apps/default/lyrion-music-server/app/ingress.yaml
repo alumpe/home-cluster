@@ -4,7 +4,7 @@ kind: Ingress
 metadata:
   name: lyrion-music-server
   annotations:
-    kubernetes.io/ingress.class: internal
+    kubernetes.io/ingress.class: external
 spec:
   rules:
     - host: "lms.${SECRET_DOMAIN}"
