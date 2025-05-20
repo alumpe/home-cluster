@@ -5,6 +5,7 @@ metadata:
   name: lyrion-music-server
   annotations:
     kubernetes.io/ingress.class: external
+    external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
 spec:
   rules:
     - host: "lms.${SECRET_DOMAIN}"
