@@ -3,10 +3,8 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: lyrion-music-server
-  annotations:
-    external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
 spec:
-  ingressClassName: external
+  ingressClassName: internal
   rules:
     - host: "lms.${SECRET_DOMAIN}"
       http:
