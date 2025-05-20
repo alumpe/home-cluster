@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lyrion-music-server
+  labels:
+    app: lms
+spec:
+  selector:
+    app: lms
+  type: NodePort
+  ports:
+    - name: http
+      port: 9000
+      targetPort: 9000
+      protocol: TCP
+    - name: web
+      port: 9090
+      targetPort: 9090
+      protocol: TCP
+    - name: tcp-sync
+      port: 3483
+      targetPort: 3483
+      protocol: TCP
+    - name: udp-sync
+      port: 3483
+      targetPort: 3483
+      protocol: UDP
