@@ -29,6 +29,8 @@ spec:
           env:
             - name: HTTP_PORT
               value: "9000"
+            - name: EXTRA_ARGS
+              value: "--advertiseaddr=192.168.178.144"
           # volumeMounts:
           #   - name: localtime
           #     mountPath: /etc/localtime
