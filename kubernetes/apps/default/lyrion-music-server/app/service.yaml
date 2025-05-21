@@ -4,7 +4,10 @@ metadata:
   name: lyrion-music-server
   labels:
     app: lms
+  annotations:
+    "lbipam.cilium.io/ips": "192.168.178.144"
 spec:
+  type: LoadBalancer
   selector:
     app: lms
   ports:
