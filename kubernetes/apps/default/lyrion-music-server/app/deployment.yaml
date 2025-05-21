@@ -31,6 +31,12 @@ spec:
               value: "9000"
             - name: EXTRA_ARGS
               value: "--advertiseaddr=192.168.178.144"
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: "Europe/Berlin"
           # volumeMounts:
           #   - name: localtime
           #     mountPath: /etc/localtime
