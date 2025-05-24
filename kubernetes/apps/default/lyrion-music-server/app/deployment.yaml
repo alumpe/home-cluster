@@ -14,6 +14,8 @@ spec:
       labels:
         app: lms
     spec:
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: lms
           image: lmscommunity/lyrionmusicserver:9.1.0
@@ -29,8 +31,8 @@ spec:
           env:
             - name: HTTP_PORT
               value: "9000"
-            - name: EXTRA_ARGS
-              value: "--advertiseaddr=192.168.178.144"
+            # - name: EXTRA_ARGS
+            #   value: "--advertiseaddr=192.168.178.144"
             - name: PUID
               value: "1000"
             - name: PGID
