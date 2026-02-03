@@ -59,3 +59,7 @@ This is a **Kubernetes Home Cluster** - a GitOps-based infrastructure-as-code pr
 - All secrets must be encrypted with SOPS before committing
 - Nodes run combined control plane + worker roles
 - Uses split DNS: internal (`k8s-gateway`) and external (Cloudflare)
+
+## Agent Guidelines
+
+**IMPORTANT:** Never commit and push changes to git unless explicitly instructed to do so by the user. Always wait for explicit confirmation before committing or pushing any changes.
