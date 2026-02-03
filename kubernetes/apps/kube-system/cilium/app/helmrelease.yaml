@@ -24,6 +24,7 @@ spec:
     # NOTE: devices might need to be set if you have more than one active NIC on your hosts
     # Using ethSel0 as configured in Talos
     devices: ethSel0
+    directRoutingDevice: ethSel0
     dashboards:
       enabled: true
     endpointRoutes:
