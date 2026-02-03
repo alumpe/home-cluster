@@ -4,6 +4,8 @@ kind: Kustomization
 namespace: default
 resources:
   - ./pvc.yaml
+  - ./postgres-pvc.yaml
+  - ./postgres-secret.sops.yaml
   - ./deployment.yaml
   - ./service.yaml
   - ./httproute.yaml
