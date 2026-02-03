@@ -23,25 +23,6 @@ spec:
         runAsUser: 1000
         runAsGroup: 1000
         fsGroup: 1000
-      initContainers:
-        - name: init-postgres
-          image: postgres:17-alpine
-          command:
-            - sh
-            - -c
-            - |
-              echo "Waiting for PostgreSQL to be ready..."
-              until pg_isready -h localhost -p 5432 -U mealie; do
-                echo "PostgreSQL is not ready yet. Waiting..."
-                sleep 2
-              done
-              echo "PostgreSQL is ready!"
-          resources:
-            requests:
-              cpu: 10m
-              memory: 32Mi
-            limits:
-              memory: 64Mi
       containers:
         - name: postgres
           image: postgres:17-alpine
