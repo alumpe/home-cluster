@@ -22,7 +22,8 @@ spec:
         enabled: false
       hostRoot: /sys/fs/cgroup
     # NOTE: devices might need to be set if you have more than one active NIC on your hosts
-    # devices: eno+ eth+
+    # Using ethSel0 as configured in Talos
+    devices: ethSel0
     dashboards:
       enabled: true
     endpointRoutes:

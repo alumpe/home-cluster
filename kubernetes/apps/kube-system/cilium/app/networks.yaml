@@ -15,9 +15,9 @@ metadata:
 spec:
   loadBalancerIPs: true
   # NOTE: interfaces might need to be set if you have more than one active NIC on your hosts
-  # interfaces:
-  #   - ^eno[0-9]+
-  #   - ^eth[0-9]+
+  # Using ethSel0 as configured in Talos
+  interfaces:
+    - ^ethSel0$
   nodeSelector:
     matchLabels:
       kubernetes.io/os: linux
