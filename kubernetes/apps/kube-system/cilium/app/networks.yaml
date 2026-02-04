@@ -7,7 +7,6 @@ spec:
   allowFirstLastIPs: "No"
   blocks:
     - cidr: "192.168.178.0/24"
-    - cidr: "fd7b:7e8b:45f9::/64"
 ---
 apiVersion: cilium.io/v2alpha1
 kind: CiliumL2AnnouncementPolicy

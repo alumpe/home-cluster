@@ -6,7 +6,7 @@ metadata:
   labels:
     app: blocky
   annotations:
-    lbipam.cilium.io/ips: "192.168.178.144,fd7b:7e8b:45f9::144"
+    lbipam.cilium.io/ips: "192.168.178.144"
 spec:
   type: LoadBalancer
   selector:
