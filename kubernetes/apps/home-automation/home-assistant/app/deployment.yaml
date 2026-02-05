@@ -18,6 +18,8 @@ spec:
       labels:
         app: home-assistant
     spec:
+      nodeSelector:
+        kubernetes.io/hostname: giedi
       securityContext:
         fsGroup: 1000
       containers:
@@ -37,12 +39,16 @@ spec:
             - name: config-template
               mountPath: /config/configuration.yaml
               subPath: configuration.yaml
+            - name: zigbee-usb
+              mountPath: /dev/ttyUSB0
           resources:
             requests:
               cpu: 100m
               memory: 512Mi
             limits:
               memory: 2Gi
+          securityContext:
+            privileged: true
           livenessProbe:
             httpGet:
               path: /
@@ -66,3 +72,7 @@ spec:
         - name: config-template
           configMap:
             name: home-assistant-config
+        - name: zigbee-usb
+          hostPath:
+            path: /dev/serial/by-id/usb-Itead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_V2_6082cf4adf73ef11b7b0df1e313510fd-if00-port0
+            type: CharDevice
