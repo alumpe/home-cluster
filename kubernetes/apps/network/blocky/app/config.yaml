@@ -13,7 +13,7 @@ data:
 
     conditional:
       mapping:
-        alumpe.de: 192.168.178.141
+        # Empty - alumpe.de handled by external DNS
 
     blocking:
       denylists:
