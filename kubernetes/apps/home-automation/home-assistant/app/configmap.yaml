@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: home-assistant-config
+  namespace: home-automation
+data:
+  configuration.yaml: |
+    # Home Assistant configuration
+    default_config:
+    
+    http:
+      use_x_forwarded_for: true
+      trusted_proxies:
+        - 10.42.0.0/16
+        - 127.0.0.1
+        - ::1
+    
+    # Enable mobile app support
+    mobile_app:
+    
+    # Recorder configuration (SQLite by default)
+    recorder:
+      db_url: sqlite:////config/home-assistant_v2.db
