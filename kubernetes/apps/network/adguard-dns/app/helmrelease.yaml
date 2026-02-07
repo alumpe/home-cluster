@@ -33,7 +33,9 @@ spec:
                 name: adguard-dns-secret
                 key: password
           - name: LOG_LEVEL
-            value: info
+            value: debug
+          - name: ADGUARD_DEBUG
+            value: "true"
         livenessProbe:
           httpGet:
             path: /healthz
@@ -50,6 +52,7 @@ spec:
       - --gateway-name=envoy-internal
       - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
       - --crd-source-kind=DNSEndpoint
+      - --log-level=debug
     policy: sync
     sources: ["gateway-httproute"]
     domainFilters: ["${SECRET_DOMAIN}"]
