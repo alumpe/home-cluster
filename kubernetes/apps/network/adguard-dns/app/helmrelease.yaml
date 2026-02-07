@@ -10,7 +10,6 @@ spec:
   interval: 1h
   values:
     fullnameOverride: *app
-    logLevel: debug
     provider:
       name: webhook
       webhook:
