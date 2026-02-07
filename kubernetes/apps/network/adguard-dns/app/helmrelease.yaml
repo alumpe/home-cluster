@@ -10,6 +10,7 @@ spec:
   interval: 1h
   values:
     fullnameOverride: *app
+    logLevel: debug
     provider:
       name: webhook
       webhook:
@@ -52,7 +53,6 @@ spec:
       - --gateway-name=envoy-internal
       - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
       - --crd-source-kind=DNSEndpoint
-      - --log-level=debug
     policy: sync
     sources: ["gateway-httproute"]
     domainFilters: ["${SECRET_DOMAIN}"]
