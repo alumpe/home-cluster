@@ -4,8 +4,6 @@ kind: HTTPRoute
 metadata:
   name: adguard
   namespace: network
-  annotations:
-    external-dns.alpha.kubernetes.io/target: "internal.${SECRET_DOMAIN}"
 spec:
   hostnames:
     - "adguard.${SECRET_DOMAIN}"
