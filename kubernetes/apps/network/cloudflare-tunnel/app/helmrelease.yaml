@@ -68,6 +68,7 @@ spec:
       config:
         data:
           config.yaml: |-
+            tunnel: cb068bb1-81ef-4a8f-a061-25b7f09ee08b
             ingress:
               - hostname: "*.${SECRET_DOMAIN}"
                 originRequest:
